@@ -5,10 +5,11 @@
 
 struct Tenant
 {
-    std::string username;
-    std::string password;
-    std::string tenantID;
-    std::string unitID;
+    string tenantID;
+    string username;
+    string password;
+    string unitID;
+    int age;
 };
 
 bool AuthenticateAdmin();
