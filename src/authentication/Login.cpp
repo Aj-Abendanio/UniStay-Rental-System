@@ -3,8 +3,51 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 
 using namespace std;
+
+string GenerateTenantID()
+{
+    ifstream file("data/tenants.csv");
+
+    if (!file.is_open())
+        return "T001";
+
+    string line;
+    int count = -1; // Ignore header
+
+    while (getline(file, line))
+    {
+        count++;
+    }
+
+    stringstream id;
+    id << "T" << setw(3) << setfill('0') << count + 1;
+
+    return id.str();
+}
+
+string GenerateGuardianID()
+{
+    ifstream file("data/guardians.csv");
+
+    if (!file.is_open())
+        return "G001";
+
+    string line;
+    int count = -1;
+
+    while (getline(file, line))
+    {
+        count++;
+    }
+
+    stringstream id;
+    id << "G" << setw(3) << setfill('0') << count + 1;
+
+    return id.str();
+}
 
 bool AuthenticateAdmin()
 {
@@ -52,30 +95,25 @@ bool AuthenticateTenant(Tenant& currentTenant)
 
     string line;
 
-    // Skip header
     getline(file, line);
 
     while (getline(file, line))
     {
         stringstream ss(line);
 
-        string tenantID;
-        string csvUsername;
-        string csvPassword;
-        string unitID;
+        string age;
 
-        getline(ss, tenantID, ',');
-        getline(ss, csvUsername, ',');
-        getline(ss, csvPassword, ',');
-        getline(ss, unitID, ',');
+        getline(ss, currentTenant.tenantID, ',');
+        getline(ss, currentTenant.username, ',');
+        getline(ss, currentTenant.password, ',');
+        getline(ss, currentTenant.unitID, ',');
+        getline(ss, age, ',');
 
-        if (username == csvUsername && password == csvPassword)
+        currentTenant.age = stoi(age);
+
+        if (username == currentTenant.username &&
+            password == currentTenant.password)
         {
-            currentTenant.tenantID = tenantID;
-            currentTenant.username = csvUsername;
-            currentTenant.password = csvPassword;
-            currentTenant.unitID = unitID;
-
             cout << "Login successful.\n";
             return true;
         }
@@ -91,9 +129,6 @@ bool RegisterTenant()
 
     cout << "\n===== Tenant Registration =====\n";
 
-    cout << "Tenant ID: ";
-    cin >> newTenant.tenantID;
-
     cout << "Username: ";
     cin >> newTenant.username;
 
@@ -102,6 +137,9 @@ bool RegisterTenant()
 
     cout << "Unit ID: ";
     cin >> newTenant.unitID;
+
+    cout << "Age: ";
+    cin >> newTenant.age;
 
     ifstream checkFile("data/tenants.csv");
 
@@ -113,7 +151,6 @@ bool RegisterTenant()
 
     string line;
 
-    // Skip header
     getline(checkFile, line);
 
     while (getline(checkFile, line))
@@ -124,11 +161,13 @@ bool RegisterTenant()
         string username;
         string password;
         string unitID;
+        string age;
 
         getline(ss, tenantID, ',');
         getline(ss, username, ',');
         getline(ss, password, ',');
         getline(ss, unitID, ',');
+        getline(ss, age, ',');
 
         if (username == newTenant.username)
         {
@@ -139,22 +178,57 @@ bool RegisterTenant()
 
     checkFile.close();
 
-    ofstream file("data/tenants.csv", ios::app);
+    newTenant.tenantID = GenerateTenantID();
 
-    if (!file.is_open())
+    ofstream tenantFile("data/tenants.csv", ios::app);
+
+    if (!tenantFile.is_open())
     {
         cout << "Unable to open tenants.csv\n";
         return false;
     }
 
-    file << newTenant.tenantID << ","
-         << newTenant.username << ","
-         << newTenant.password << ","
-         << newTenant.unitID << "\n";
+    tenantFile << newTenant.tenantID << ","
+               << newTenant.username << ","
+               << newTenant.password << ","
+               << newTenant.unitID << ","
+               << newTenant.age << "\n";
 
-    file.close();
+    tenantFile.close();
+
+    if (newTenant.age < 18)
+    {
+        string guardianID = GenerateGuardianID();
+        string guardianName;
+        string guardianPhone;
+
+        cin.ignore();
+
+        cout << "\nTenant is under 18.\n";
+        cout << "Guardian Name: ";
+        getline(cin, guardianName);
+
+        cout << "Guardian Phone: ";
+        getline(cin, guardianPhone);
+
+        ofstream guardianFile("data/guardians.csv", ios::app);
+
+        if (!guardianFile.is_open())
+        {
+            cout << "Unable to open guardians.csv\n";
+            return false;
+        }
+
+        guardianFile << guardianID << ","
+                     << newTenant.tenantID << ","
+                     << guardianName << ","
+                     << guardianPhone << "\n";
+
+        guardianFile.close();
+    }
 
     cout << "Registration successful.\n";
+    cout << "Assigned Tenant ID: " << newTenant.tenantID << "\n";
 
     return true;
 }
