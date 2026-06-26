@@ -1,12 +1,24 @@
 #ifndef UNIT_H
 #define UNIT_H
 
-#include <unordered_map>
 #include <string>
+#include <unordered_map>
 
-extern std::unordered_map<std::string, float> unitDatabase;
+struct Unit
+{
+    std::string unitID;
+    double rent;
+    double balance;
+    std::string status;
+};
 
-void LoadDataFromCSV();
-void SaveDataToCSV();
+extern std::unordered_map<std::string, Unit> unitDatabase;
+
+bool LoadUnits();
+bool SaveUnits();
+
+void ViewAllUnits();
+bool UnitExists(const std::string& unitID);
+Unit* FindUnit(const std::string& unitID);
 
 #endif
