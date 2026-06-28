@@ -1,12 +1,10 @@
 # UniStay-Rental-System
 A console-based Rental Management System in C++ implementing DSA concepts including Linked Lists, Stacks, Queues, Trees, Graphs, Sorting and Searching Algorithms.
 
----
 
 ## Overview 
 UniStay is a rental property management system that allows administrators and tenants to manage their rental units, tenant accounts, reservations, billing, and maintenance requests using a console application. The project serves as a practical application of fundamental Data Structures and Algorithms (DSA) concepts learned throughout the course while following modular software design practices.
 
----
 
 # Technologies Used:
 - C++ 
@@ -15,80 +13,24 @@ UniStay is a rental property management system that allows administrators and te
 - File Handling 
 - Git & GitHub
 
----
 
-# Project Structure
+## Project Structure
 
-UniStay-Rental-System
-├── src
-│   ├── authentication
-│   │   ├── Login.cpp
-│   │   └── Login.h
-│   ├── billing
-│   │   ├── Billing.cpp
-│   │   ├── Billing.h
-│   │   ├── Payment.cpp
-│   │   └── Payment.h
-│   ├── booking
-│   │   ├── Reservation.cpp
-│   │   └── Reservation.h
-│   ├── dsa
-│   │   ├── BinaryTree.cpp
-│   │   ├── Graph.cpp
-│   │   ├── LinkedList.cpp
-│   │   ├── Queue.cpp
-│   │   ├── Searching.cpp
-│   │   ├── Sorting.cpp
-│   │   ├── Sorting.h
-│   │   └── Stack.cpp
-│   ├── maintenance
-│   │   ├── Complaint.cpp
-│   │   ├── Complaint.h
-│   │   ├── Maintenance.cpp
-│   │   └── Maintenance.h
-│   ├── property
-│   │   ├── Unit.cpp
-│   │   └── Unit.h
-│   ├── reports
-│   │   ├── Reports.cpp
-│   │   └── Reports.h
-│   ├── users
-│   │   ├── Admin.cpp
-│   │   ├── Admin.h
-│   │   ├── Guardian.cpp
-│   │   ├── Guardian.h
-│   │   ├── Tenant.cpp
-│   │   └── Tenant.h
-│   └── main.cpp
-├── data
-│   ├── bookings.csv
-│   ├── complaints.csv
-│   ├── guardians.csv
-│   ├── payments.csv
-│   ├── tenants.csv
-│   └── units.csv
-├── docs
-│   └── Pseudocode and Flowchart.pdf
-├── .vscode
-├── build.bat
-├── README.md
-└── .gitignore
-
-## Folder Description
-
-| Folder | Description |
-|---------|-------------|
-| `src/` | Contains all source code for the system. |
-| `authentication/` | Login and authentication functions. |
-| `billing/` | Billing and payment management. |
-| `booking/` | Reservation-related functionality. |
-| `dsa/` | Implementations of required Data Structures and Algorithms. |
-| `maintenance/` | Complaint and maintenance management. |
-| `property/` | Rental unit management. |
-| `reports/` | Report generation module. |
-| `users/` | Administrator, tenant, and guardian management. |
-| `data/` | Stores CSV files used for persistent data. |
-| `docs/` | Project documentation, pseudocode, and flowcharts. |
+| Folder/File       | Description                                        |
+| ----------------- | -------------------------------------------------- |
+| `src/`            | Contains all source code for the system.           |
+| `authentication/` | Login and authentication module.                   |
+| `billing/`        | Billing and payment processing.                    |
+| `booking/`        | Reservation management.                            |
+| `dsa/`            | Data Structures and Algorithms implementations.    |
+| `maintenance/`    | Complaint and maintenance handling.                |
+| `property/`       | Rental unit management.                            |
+| `reports/`        | Reporting module.                                  |
+| `users/`          | Administrator, tenant, and guardian modules.       |
+| `data/`           | CSV files used for persistent storage.             |
+| `docs/`           | Project documentation, flowcharts, and pseudocode. |
+| `build.bat`       | Compiles and runs the project.                     |
+| `README.md`       | Project documentation.                             |
 
 ## Current Features
 
@@ -136,7 +78,6 @@ Current data files include:
 * `bookings.csv`
 * `guardians.csv`
 
----
 
 # Programming Concepts Demonstrated
 
@@ -154,7 +95,6 @@ This project is made to demonstrate the application of the Data Structures and A
 | Sorting Algorithms   | Sort tenant and property records           | Planned |
 | Searching Algorithms | Locate records efficiently                 | Planned |
 
----
 
 # Development Progress
 
@@ -171,7 +111,6 @@ This project is made to demonstrate the application of the Data Structures and A
 | Guardian Module        | Planned              |
 | Console Interface      | Improving            |
 
----
 
 # How to Build and Run
 
@@ -188,7 +127,6 @@ Verify your compiler by running:
 g++ --version
 ```
 
----
 
 ## Build
 
@@ -204,7 +142,6 @@ Alternatively, compile manually:
 g++ src/main.cpp src/authentication/Login.cpp src/property/Unit.cpp src/maintenance/Complaint.cpp src/users/Admin.cpp src/users/Tenant.cpp src/dsa/Sorting.cpp -o unistay.exe
 ```
 
----
 
 ## Run
 
@@ -216,7 +153,6 @@ unistay.exe
 
 Or just run **build.bat** to auto compile and launch the prorgam.
 
----
 
 # Changelog
 
@@ -249,7 +185,6 @@ This section records significant updates made throughout the project's developme
 * Prepared DSA implementation modules
 * Improved README section
 
----
 
 # Developer Notes
 
@@ -285,7 +220,6 @@ Improved the console interface and standardized project documentation.
 **Notes**
 * Console utility functions could be moved into a dedicated `Console` module in a future update.
 
----
 # Known Issues
 
 * Reservation system is still under development.
@@ -293,7 +227,6 @@ Improved the console interface and standardized project documentation.
 * Reporting module has not yet been implemented.
 * Console interface is still being refined.
 
----
 
 # Contributors
 
@@ -306,7 +239,6 @@ Improved the console interface and standardized project documentation.
 | Research/Documentation | Jaiceryn Dela Cruz |
 | Research/Documentation | Alaina Rocreo |
 
----
 
-FEU Institute of Technology
-Bachelor of Science in Computer Science with Specialization in AI
+**FEU Institute of Technology**
+**Bachelor of Science in Computer Science with Specialization in AI**
