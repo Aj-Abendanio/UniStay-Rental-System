@@ -19,73 +19,60 @@ UniStay is a rental property management system that allows administrators and te
 
 # Project Structure
 
-UniStay-Rental-System/
-|
-|-- src/
-|   |
-|   |-- authentication/
-|   |   |-- Login.cpp
-|   |   `-- Login.h
-|   |
-|   |-- billing/
-|   |   |-- Billing.cpp
-|   |   |-- Billing.h
-|   |   |-- Payment.cpp
-|   |   `-- Payment.h
-|   |
-|   |-- booking/
-|   |   |-- Reservation.cpp
-|   |   `-- Reservation.h
-|   |
-|   |-- dsa/
-|   |   |-- BinaryTree.cpp
-|   |   |-- Graph.cpp
-|   |   |-- LinkedList.cpp
-|   |   |-- Queue.cpp
-|   |   |-- Searching.cpp
-|   |   |-- Sorting.cpp
-|   |   |-- Sorting.h
-|   |   `-- Stack.cpp
-|   |
-|   |-- maintenance/
-|   |   |-- Complaint.cpp
-|   |   |-- Complaint.h
-|   |   |-- Maintenance.cpp
-|   |   `-- Maintenance.h
-|   |
-|   |-- property/
-|   |   |-- Unit.cpp
-|   |   `-- Unit.h
-|   |
-|   |-- reports/
-|   |   |-- Reports.cpp
-|   |   `-- Reports.h
-|   |
-|   |-- users/
-|   |   |-- Admin.cpp
-|   |   |-- Admin.h
-|   |   |-- Guardian.cpp
-|   |   |-- Guardian.h
-|   |   |-- Tenant.cpp
-|   |   `-- Tenant.h
-|   |
-|   `-- main.cpp
-|
-|-- data/
-|   |-- bookings.csv
-|   |-- complaints.csv
-|   |-- guardians.csv
-|   |-- payments.csv
-|   |-- tenants.csv
-|   `-- units.csv
-|
-|-- docs/
-|   `-- Pseudocode and Flowchart.pdf
-|
-|-- .vscode/
-|-- build.bat
-|-- README.md
-`-- .gitignore
+UniStay-Rental-System
+├── src
+│   ├── authentication
+│   │   ├── Login.cpp
+│   │   └── Login.h
+│   ├── billing
+│   │   ├── Billing.cpp
+│   │   ├── Billing.h
+│   │   ├── Payment.cpp
+│   │   └── Payment.h
+│   ├── booking
+│   │   ├── Reservation.cpp
+│   │   └── Reservation.h
+│   ├── dsa
+│   │   ├── BinaryTree.cpp
+│   │   ├── Graph.cpp
+│   │   ├── LinkedList.cpp
+│   │   ├── Queue.cpp
+│   │   ├── Searching.cpp
+│   │   ├── Sorting.cpp
+│   │   ├── Sorting.h
+│   │   └── Stack.cpp
+│   ├── maintenance
+│   │   ├── Complaint.cpp
+│   │   ├── Complaint.h
+│   │   ├── Maintenance.cpp
+│   │   └── Maintenance.h
+│   ├── property
+│   │   ├── Unit.cpp
+│   │   └── Unit.h
+│   ├── reports
+│   │   ├── Reports.cpp
+│   │   └── Reports.h
+│   ├── users
+│   │   ├── Admin.cpp
+│   │   ├── Admin.h
+│   │   ├── Guardian.cpp
+│   │   ├── Guardian.h
+│   │   ├── Tenant.cpp
+│   │   └── Tenant.h
+│   └── main.cpp
+├── data
+│   ├── bookings.csv
+│   ├── complaints.csv
+│   ├── guardians.csv
+│   ├── payments.csv
+│   ├── tenants.csv
+│   └── units.csv
+├── docs
+│   └── Pseudocode and Flowchart.pdf
+├── .vscode
+├── build.bat
+├── README.md
+└── .gitignore
 
 ## Folder Description
 
